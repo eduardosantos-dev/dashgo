@@ -13,7 +13,11 @@ interface InputProps extends ChakraInputProps {
 export default function Input({ name, label, ...rest }: InputProps) {
   return (
     <FormControl autoComplete="false">
-      {!!label && <FormLabel htmlFor={name}>{label}</FormLabel>}
+      {!!label && (
+        <FormLabel id={`${name}_label`} htmlFor={name}>
+          {label}
+        </FormLabel>
+      )}
       <ChakraInput
         id={name}
         name={name}
